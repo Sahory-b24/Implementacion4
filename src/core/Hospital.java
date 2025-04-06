@@ -77,7 +77,53 @@ public class Hospital {
         return true;
     }
 
-    public void assignPatientDoctor(Patient patient, int doctorID) {
+    
+
+    public boolean assignAppoiment(Patient patient, int doctorIDPlus) {
+        int teamID = patient.getTeam().getID();
+        Doctor doctor = this.getDoctor(teamID + doctorIDPlus);
+        Appoiment appoiment = new Appoiment(doctor, patient);
+//        doctor.addAppoiment(appoiment);
+//        patient.addAppoiment(appoiment);
+        return true;
+    }
+    public boolean assignPatientDoctor(Patient patient, int doctorIDPlus) {
+        int teamID = patient.getTeam().getID();
+        Doctor doctor = this.getDoctor(teamID + doctorIDPlus);
         
+        doctor.addPatient(patient);
+        patient.addDoctor(doctor);
+        
+        return true;
+    }
+    public void numberDoctorsPatient() {
+        for (Ward ward : this.wards) {
+            for (Patient patient : ward.getPatients()) {
+                int index = patient.getDoctors().size();
+                System.out.println("Patient "+ patient.getID()+" has "+ index + " doctors");
+            }
+        }
+    }
+
+    public void numberPatientsTeam() {
+        for (Team team : this.teams) {
+                int index = team.getPatients().size();
+                System.out.println("team "+ team.getID()+" has "+ index + " patients");
+        }
+    }
+
+    public void relationAppoiments() {
+        for (Ward ward : this.wards) {
+            for (Patient patient : ward.getPatients()) {
+                int index = patient.getAppoiments().size();
+                System.out.println("Patient "+ patient.getID()+" has "+ index +" Appoimnets");
+                if (index > 0) {
+                    ArrayList<Integer> doctoresID = patient.getDoctorsId();
+                    for (Integer docID : doctoresID) {
+                        System.out.println("Patient "+ patient.getID()+ " has an appoiment with the doctor "+ docID);
+                    }
+                }
+            }
+        }
     }
 }

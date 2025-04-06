@@ -20,7 +20,9 @@ public abstract class Doctor {
         this.ID = ID;
         this.team = team;
         this.appoiments = new ArrayList<>();
-        this.appoiments = new ArrayList<>();
+        this.patients = new ArrayList<>();
+        
+        this.team.addDoctor(this);
     }
 
     public int getID() {

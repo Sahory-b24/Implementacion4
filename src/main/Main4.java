@@ -93,7 +93,7 @@ public class Main4 {
 ------------- Resultados -------------
 
 Number of doctors per patient:
-Patient 10 has 2 doctors
+Patient 10 has 2 doctors  
 Patient 11 has 1 doctors
 Patient 12 has 3 doctors
 Patient 13 has 1 doctors

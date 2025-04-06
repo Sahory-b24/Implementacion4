@@ -16,11 +16,23 @@ public class Ward {
 
     public Ward(int ID) {
         this.ID = ID;
+        this.patients = new ArrayList<>();
     }
     
     public int getID() {
         return ID;
     }
+
+    public ArrayList<Patient> getPatients() {
+        return patients;
+    }
     
     
+    public boolean addPatient(Patient patient){
+        if (!this.patients.contains(patient)) {
+            this.patients.add(patient);
+            return true;
+        }
+        return false;
+    }
 }

@@ -36,5 +36,18 @@ public class Team {
         return patients;
     }
     
-    
+    public boolean addPatient(Patient patient){
+        if (!this.patients.contains(patient)) {
+            this.patients.add(patient);
+            return true;
+        }
+        return false;
+    }
+    public boolean addDoctor(Doctor doctor){
+        if (!this.doctors.contains(doctor)) {
+            this.doctors.add(doctor);
+            return true;
+        }
+        return false;
+    }
 }
