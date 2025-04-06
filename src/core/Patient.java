@@ -36,5 +36,11 @@ public class Patient {
     public Ward getWard() {
         return ward;
     }
-    
+    public boolean addDoctor(Doctor doctor){
+        if (!this.doctors.contains(doctor)) {
+            this.doctors.add(doctor);
+            return true;
+        }
+        return false;
+    }
 }

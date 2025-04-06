@@ -38,4 +38,46 @@ public class Hospital {
         }
         return null;
     }
+    public Ward getWard(int wardID){
+        for (Ward ward : this.wards) {
+            if (ward.getID() == wardID) {
+                return ward;
+            }
+        }
+        return null;
+    }
+    public Patient getPatient(int patientID){
+        for (Team team : this.teams) {
+            for (Patient patient : team.getPatients()) {
+                if (patient.getID() == patientID) {
+                    return patient;
+                }
+            }
+ 
+        }
+        return null;
+    }
+    public void addTeam(int idTeam, int idConsultantDoctor){
+        Team team = new Team(idTeam);
+        ConsultantDoctor consultantDoctor = new ConsultantDoctor(idConsultantDoctor,team); 
+        this.teams.add(team);
+        
+    }
+    public boolean addJuniorDoctor(Team team, int doctorID){
+        JuniorDoctor juniorDoctor = new JuniorDoctor(doctorID, team);
+        return true;
+    }
+
+    public boolean addWard(int wardID) {
+        this.wards.add(new Ward(wardID));
+        return true;
+    }
+    public boolean addPatient(Ward ward, Team team, int patientID){
+        Patient patient = new Patient(patientID, team, ward);
+        return true;
+    }
+
+    public void assignPatientDoctor(Patient patient, int doctorID) {
+        
+    }
 }

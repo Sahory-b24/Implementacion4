@@ -16,7 +16,7 @@ public class Team {
     private ArrayList<Doctor> doctors;
     private ArrayList<Patient> patients;
 
-    public Team(int ID, ConsultantDoctor teamLeader) {
+    public Team(int ID) {
         this.ID = ID;
         this.teamLeader = teamLeader;
         this.doctors = new ArrayList<>();
@@ -30,6 +30,10 @@ public class Team {
 
     public ArrayList<Doctor> getDoctors() {
         return doctors;
+    }
+
+    public ArrayList<Patient> getPatients() {
+        return patients;
     }
     
     

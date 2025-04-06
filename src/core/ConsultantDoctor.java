@@ -11,9 +11,9 @@ package core;
 public class ConsultantDoctor extends Doctor{
     private Team leaderOf;
 
-    public ConsultantDoctor(Team leaderOf, int ID, Team team) {
+    public ConsultantDoctor(int ID, Team team) {
         super(ID, team);
-        this.leaderOf = leaderOf;
+        this.leaderOf = team;
     }
     
 }

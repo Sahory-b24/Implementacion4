@@ -13,4 +13,14 @@ import java.util.ArrayList;
 public class Ward {
     private int ID;
     private ArrayList<Patient> patients;
+
+    public Ward(int ID) {
+        this.ID = ID;
+    }
+    
+    public int getID() {
+        return ID;
+    }
+    
+    
 }
